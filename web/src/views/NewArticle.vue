@@ -34,6 +34,8 @@ export default {
                 body: JSON.stringify(article)
             }
             fetch('http://localhost:5000/api/articles/', requestOptions)
+            // go back to all articles
+            this.$router.push('/articles')
         }
     }
 }
