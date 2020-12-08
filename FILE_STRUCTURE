@@ -1,6 +1,6 @@
 api/                    flask api
-├── banana/
-│   ├── __init__.py     turns the banana directory into a python package
+├── shop/
+│   ├── __init__.py     turns the shop directory into a python package
 │   ├── app.py          for creating an instance of the flask app
 │   ├── config.py       contains configuration settings for the flask app
 │   └── routes.py       for defining api endpoints, or routes
