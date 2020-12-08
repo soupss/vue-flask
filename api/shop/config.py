@@ -10,4 +10,5 @@ class Config():
     SECRET_KEY = 'mysecretkey'
 
 class DevelopmentConfig(Config):
+    ENV = 'development'
     DEBUG = True
