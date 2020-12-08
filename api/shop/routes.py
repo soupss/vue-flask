@@ -18,7 +18,7 @@ def get_articles():
 
 # article by id
 @api.route('/articles/<int:id>/', methods=['GET'])
-def get_article_by_id(id):
+def get_article(id):
     article = Article.query.get_or_404(id)
     response = {'article': article.to_dict()}
     return make_response(jsonify(response), 200)
@@ -34,8 +34,16 @@ def add_article():
         response = make_response('Article created successfully', 201)
     except IntegrityError:
         db.session.rollback()
-        response = make_response(f'Unable to create article: An article with title:"{article.title}" already exists.', 409)
+        response = make_response(f'Unable to create article: An article with title "{article.title}" already exists.', 409)
     return response
+
+@api.route('/articles/<int:id>/', methods=['POST'])
+def delete_article(id):
+    article = Article.query.get_or_404(id)
+    db.session.delete(article)
+    db.session.commit()
+    return make_response(f'Article deleted with id {id}', 200)
+
 
 #TODO: update_article PUT
 #TODO: delete_article POST

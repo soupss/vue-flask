@@ -17,7 +17,7 @@ class Article(db.Model):
         self.price = price
 
     def __repr__(self):
-        return f"<Article('{self.title}', '{self.description}', {self.price}, {self.created_at})>"
+        return f"<Article('{self.id}', '{self.title}', '{self.description}', {self.price}, {self.created_at})>"
 
     def to_dict(self):
         return dict(id=self.id,
