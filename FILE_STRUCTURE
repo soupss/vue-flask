@@ -3,5 +3,7 @@ api/                    flask api
 │   ├── __init__.py     turns the shop directory into a python package
 │   ├── app.py          for creating an instance of the flask app
 │   ├── config.py       contains configuration settings for the flask app
+│   ├── models.py       for defining classes that will serve as objects in the database
 │   └── routes.py       for defining api endpoints, or routes
+├── manage.py           access to flask app instance for flask-script and flask-migrate commands
 └── run.py              start-up script for running the api app
