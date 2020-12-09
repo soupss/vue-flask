@@ -1,12 +1,3 @@
-# custom files
-**/env/
-*.pyc
-*.db
-.DS_Store
-node_modules
-/dist
-api/migrations
-
 # local env files
 .env.local
 .env.*.local
@@ -25,3 +16,13 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+
+# custom files
+**/env/
+*.pyc
+*.db
+.DS_Store
+node_modules
+/dist
+api/migrations
+todo
