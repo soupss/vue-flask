@@ -8,7 +8,7 @@
 import ArticlePreview from '@/components/ArticlePreview.vue'
 
 export default {
-    name: 'Articles',
+    name: 'Article Previews',
     components: {
         'ArticlePreview': ArticlePreview
     },

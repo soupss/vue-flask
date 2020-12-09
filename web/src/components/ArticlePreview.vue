@@ -1,10 +1,9 @@
 <template>
-    <button @click="deleteThis">x</button>
-    <h1>{{ title }}</h1>
+    <p>{{ title }}</p>
     <small>({{ category }})</small>
     <p><b>{{ price }}$</b></p>
-    <p>{{ description }}</p>
-    <p>uploaded <b>{{ created_at }}</b></p>
+    <p>{{ created_at }}</p>
+    <button @click="goToFullArticle">View full article</button>
 </template>
 
 <script>
@@ -20,15 +19,8 @@ export default {
     },
     emits: ['delete'],
     methods: {
-        deleteThis() {
-            const body = {}
-            const requestOptions = {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(body)
-            }
-            fetch('http://localhost:5000/api/articles/'+this.id+'/', requestOptions)
-                .then(() => this.$emit('delete'))
+        goToFullArticle() {
+            this.$router.push('/article/'+this.id)
         }
     }
 }
