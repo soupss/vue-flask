@@ -1,18 +1,20 @@
 <template>
     <button @click="deleteThis">x</button>
     <h1>{{ title }}</h1>
-    <small>{{ price }}$</small>
+    <small>({{ category }})</small>
+    <p><b>{{ price }}$</b></p>
     <p>{{ description }}</p>
     <p>uploaded <b>{{ created_at }}</b></p>
 </template>
 
 <script>
 export default {
-    name: 'Shop Article',
+    name: 'Article Preview',
     props: {
         title: String,
         description: String,
         price: Number,
+        category: String,
         created_at: String,
         id: Number
     },
@@ -26,7 +28,7 @@ export default {
                 body: JSON.stringify(body)
             }
             fetch('http://localhost:5000/api/articles/'+this.id+'/', requestOptions)
-                .then(_ => this.$emit('delete'))
+                .then(() => this.$emit('delete'))
         }
     }
 }

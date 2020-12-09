@@ -27,7 +27,7 @@ def get_article(id):
 @api.route('/articles/', methods=['POST'])
 def add_article():
     data = request.get_json()
-    article = Article(data['title'], data['description'], data['price'])
+    article = Article(data['title'], data['description'], data['price'], data['category'])
     db.session.add(article)
     try:
         db.session.commit()
@@ -43,7 +43,6 @@ def delete_article(id):
     db.session.delete(article)
     db.session.commit()
     return make_response(f'Article deleted with id {id}', 200)
-
 
 #TODO: update_article PUT
 #TODO: delete_article POST
