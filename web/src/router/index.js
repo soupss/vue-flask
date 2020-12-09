@@ -1,17 +1,17 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import Articles from '../views/Articles.vue'
-import NewArticle from '../views/NewArticle.vue'
+import ArticlesView from '../views/ArticlesView.vue'
+import NewArticleView from '../views/NewArticleView.vue'
 
 const routes = [
     {
         path: '/articles',
         name: 'Articles',
-        component: Articles
+        component: ArticlesView
     },
     {
         path: '/articles/new',
         name: 'New Article',
-        component: NewArticle
+        component: NewArticleView
     }
 ]
 

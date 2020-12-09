@@ -1,7 +1,7 @@
 <template>
     <h1>Articles</h1>
     <p v-if="articles.length === 0">No articles</p>
-    <shop-article v-for="article in articles" :="article" @delete="loadArticles"></shop-article>
+    <shop-article v-for="article in articles" :key="article.id" :="article" @delete="loadArticles"></shop-article>
 </template>
 
 <script>
