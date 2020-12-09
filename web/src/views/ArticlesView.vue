@@ -1,16 +1,16 @@
 <template>
     <h1>Articles</h1>
     <p v-if="articles.length === 0">No articles</p>
-    <shop-article v-for="article in articles" :key="article.id" :="article" @delete="loadArticles"></shop-article>
+    <article-element v-for="article in articles" :key="article.id" :="article" @delete="loadArticles"></article-element>
 </template>
 
 <script>
-import ShopArticle from '@/components/ShopArticle.vue'
+import Article from '@/components/Article.vue'
 
 export default {
     name: 'Articles',
     components: {
-        'shop-article': ShopArticle
+        'article-element': Article
     },
     data() {
         return {
