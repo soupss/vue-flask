@@ -16,7 +16,7 @@ def get_articles():
     response = {'articles': [a.to_dict() for a in articles]}
     return make_response(jsonify(response), 200)
 
-# article by id
+# get one article
 @api.route('/articles/<int:id>/', methods=['GET'])
 def get_article(id):
     article = Article.query.get_or_404(id)
@@ -37,7 +37,8 @@ def add_article():
         response = make_response(f'Unable to create article: An article with title "{article.title}" already exists.', 409)
     return response
 
-@api.route('/articles/<int:id>/', methods=['POST'])
+# delete article
+@api.route('/articles/<int:id>/', methods=['DELETE'])
 def delete_article(id):
     article = Article.query.get_or_404(id)
     db.session.delete(article)
