@@ -1,13 +1,20 @@
-# Shop
+# Crud App
 
 A crud app made with Vue and Flask.
+
+# Installation
 
 ## API
 ```
 cd api
 ```
 
-#### start api server
+#### install dependencies
+```
+pip install -r requirements.txt
+```
+
+#### start server
 ```
 python3 run.py
 ```
@@ -26,3 +33,7 @@ npm install
 ```
 npm run server
 ```
+
+# Usage
+
+View on http://localhost:8080
