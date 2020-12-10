@@ -1,5 +1,6 @@
 <template>
-    <button @click="deleteArticle">x</button>
+    <button @click="goToEditPage">Edit</button>
+    <button @click="deleteArticle">Delete</button>
     <h1>{{ article.title }}</h1>
     <p>uploaded <b>{{ article.created_at }}</b></p>
     <p>category:{{ article.category }}</p>
@@ -22,6 +23,9 @@ export default {
         deleteArticle() {
             this.$store.dispatch('deleteArticle', this.id)
                 .then(() => this.$router.push('/articles'))
+        },
+        goToEditPage() {
+            this.$router.push('/articles/' + this.id + '/edit')
         }
     },
     created() {

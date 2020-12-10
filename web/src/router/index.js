@@ -14,7 +14,8 @@ const routes = [
         component: ArticlePreviews
     },
     {
-        path: '/article/:id',
+        path: '/articles/:id',
+        name: 'Article',
         component: Article,
         props: true
     },
@@ -22,6 +23,12 @@ const routes = [
         path: '/articles/new',
         name: 'New Article',
         component: ArticleForm
+    },
+    {
+        path: '/articles/:id/edit',
+        name: 'Edit Article',
+        component: ArticleForm,
+        props: true
     }
 ]
 

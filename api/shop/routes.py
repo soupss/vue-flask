@@ -37,6 +37,17 @@ def add_article():
         response = make_response(f'Unable to create article: An article with title "{article.title}" already exists.', 409)
     return response
 
+# update article
+@api.route('/articles/<int:id>/', methods=['PUT'])
+def update_article(id):
+    newArticle = Article.query.get_or_404(id)
+    data = request.get_json()
+    newArticle.update(data['title'], data['description'], data['price'], data['category'])
+    db.session.add(newArticle)
+    db.session.commit()
+    response = make_response('Article updated successfully', 200)
+    return response
+
 # delete article
 @api.route('/articles/<int:id>/', methods=['DELETE'])
 def delete_article(id):

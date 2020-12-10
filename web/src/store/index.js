@@ -28,7 +28,15 @@ export default createStore({
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify(article)
             }
-            fetch(context.state.API_URL + 'articles/', requestOptions)
+            return fetch(context.state.API_URL + 'articles/', requestOptions)
+        },
+        updateArticle(context, article) {
+            const requestOptions = {
+                method: 'PUT',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(article)
+            }
+            return fetch(context.state.API_URL + 'articles/' + article.id + '/', requestOptions)
         },
         deleteArticle(context, id) {
             const requestOptions = {
