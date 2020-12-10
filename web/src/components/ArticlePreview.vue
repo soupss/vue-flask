@@ -17,7 +17,6 @@ export default {
         created_at: String,
         id: Number
     },
-    emits: ['delete'],
     methods: {
         goToFullArticle() {
             this.$router.push('/article/'+this.id)

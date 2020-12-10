@@ -19,24 +19,14 @@ export default {
         }
     },
     methods: {
-        loadArticle() {
-            fetch('http://localhost:5000/api/articles/'+this.id+'/')
-                .then(response => response.json())
-                .then(json => (this.article = json.article))
-        },
         deleteArticle() {
-            const body = {}
-            const requestOptions = {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(body)
-            }
-            fetch('http://localhost:5000/api/articles/'+this.id+'/', requestOptions)
+            this.$store.dispatch('deleteArticle', this.id)
                 .then(() => this.$router.push('/articles'))
         }
     },
     created() {
-        this.loadArticle()
+        this.$store.dispatch('fetchArticle', this.id)
+            .then(response => (this.article = response))
     }
 
 }
