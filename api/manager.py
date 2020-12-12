@@ -7,8 +7,8 @@ application to perform interactive debugging and setup
 from flask_script import Manager
 from flask_migrate import Migrate, MigrateCommand
 
-from shop.app import create_app
-from shop.models import db, Article
+from app.app import create_app
+from app.models import db, Article
 
 app = create_app()
 

@@ -5,7 +5,7 @@ config.py
 
 class Config():
     DEBUG = False
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///shop.db'
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///app.db'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SECRET_KEY = 'mysecretkey'
 

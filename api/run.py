@@ -4,6 +4,6 @@ run.py
 """
 
 if __name__ == '__main__':
-    from shop.app import create_app
+    from app.app import create_app
     app = create_app()
     app.run()

@@ -9,10 +9,10 @@ from flask_cors import CORS
 def create_app(app_name='SHOP_API'):
     app = Flask(app_name)
     cors = CORS(app)
-    app.config.from_object('shop.config.DevelopmentConfig')
-    from shop.routes import api
+    app.config.from_object('app.config.DevelopmentConfig')
+    from app.routes import api
     app.register_blueprint(api, url_prefix="/api")
-    from shop.models import db
+    from app.models import db
     db.init_app(app)
     with app.app_context():
         db.create_all()
