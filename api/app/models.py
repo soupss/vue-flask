@@ -10,7 +10,7 @@ class Article(db.Model):
     description = db.Column(db.Text, nullable=False)
     price = db.Column(db.Integer, nullable=False)
     category = db.Column(db.String(30), nullable=True)
-    created_at = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
+    time_created = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
 
     def __init__(self, title, description, price, category=None):
         self.title = title
@@ -19,7 +19,7 @@ class Article(db.Model):
         self.category = category
 
     def __repr__(self):
-        return f"<Article('{self.id}', '{self.title}', '{self.description}', '{self.price}', '{self.category}', '{self.created_at}')>"
+        return f"<Article('{self.id}', '{self.title}', '{self.description}', '{self.price}', '{self.category}', '{self.time_created}')>"
 
     def update(self, title, description, price, category=None):
         self.title = title
@@ -33,4 +33,4 @@ class Article(db.Model):
                     description=self.description,
                     price=self.price,
                     category=self.category,
-                    created_at=self.created_at)
+                    time_created=self.time_created)

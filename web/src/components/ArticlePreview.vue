@@ -2,7 +2,7 @@
     <p>{{ title }}</p>
     <small>({{ category }})</small>
     <p><b>{{ price }}$</b></p>
-    <p>{{ created_at }}</p>
+    <p>{{ time_created }}</p>
     <button @click="goToArticlePage">View full article</button>
 </template>
 
@@ -14,7 +14,7 @@ export default {
         description: String,
         price: Number,
         category: String,
-        created_at: String,
+        time_created: String,
         id: Number
     },
     methods: {

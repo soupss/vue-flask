@@ -2,7 +2,7 @@
     <button @click="goToEditPage">Edit</button>
     <button @click="deleteArticle">Delete</button>
     <h1>{{ article.title }}</h1>
-    <p>uploaded <b>{{ article.created_at }}</b></p>
+    <p>uploaded <b>{{ article.time_created }}</b></p>
     <p>category:{{ article.category }}</p>
     <p>{{ article.description }}</p>
     <p>{{ article.price }}$</p>
