@@ -2,16 +2,9 @@ import { createStore } from 'vuex'
 
 export default createStore({
     state: {
-        articles: [],
         API_URL: 'http://localhost:5000/api/'
     },
-    mutations: {
-        setArticles(state, articles) {
-            state.articles = articles
-        }
-    },
     actions: {
-        // fetch all articles
         fetchArticles(context) {
             return fetch(context.state.API_URL + 'articles')
                 .then(response => response.json())
