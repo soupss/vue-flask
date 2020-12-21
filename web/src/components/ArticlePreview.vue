@@ -1,9 +1,11 @@
 <template>
-    <p>{{ title }}</p>
-    <small>({{ category }})</small>
-    <p><b>{{ price }}$</b></p>
-    <p>{{ time_created }}</p>
-    <button @click="goToArticlePage">View full article</button>
+    <div class="mb-2 p-1 rounded border border-5 border-primary">
+        <h3>{{ title }}</h3>
+        <small>({{ category }})</small>
+        <p><b>{{ price }}$</b></p>
+        <p>{{ time_created }}</p>
+        <button @click="goToArticlePage">View full article</button>
+    </div>
 </template>
 
 <script>
