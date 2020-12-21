@@ -10,7 +10,7 @@ const routes = [
     },
     {
         path: '/articles',
-        name: 'Article Previews',
+        name: 'All Articles',
         component: ArticlePreviews
     },
     {
