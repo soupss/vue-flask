@@ -1,0 +1,8 @@
+#!/bin/bash
+
+cd api
+tmux new-session -d -s api
+tmux new-window -n server -t api: 'source ./env/bin/activate && python3 run.py'
+cd ../web
+tmux new-session -d -s web
+tmux new-window -n server -t web: 'npm run serve'
