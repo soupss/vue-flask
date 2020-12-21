@@ -1,40 +1,15 @@
 <template>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-center">
-        <ul class="navbar-nav nav">
-            <li class="nav-item">
-                <a class="text-center nav-link" to="/articles">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <br>
-                    {{ routeName }}
-                </a>
-            </li>
-            <li class="nav-item">
-                <router-link class="text-center nav-link" to="/articles">
-                    <i class="fas fa-home"></i>
-                    <br>
-                    All Articles
-                </router-link>
-            </li>
-            <li class="nav-item">
-                <router-link class="text-center nav-link" to="/articles/new">
-                    <i class="fas fa-plus"></i>
-                    <br>
-                    New Article
-                </router-link>
-            </li>
-        </ul>
+    <nav class="navbar navbar-dark bg-dark justify-content-center">
+        <div class="nav nav-pills">
+            <router-link class="text-center nav-link" :class="{ active : this.$route.name === 'All Articles' }" to="/articles">
+                Show Articles
+            </router-link>
+            <router-link class="text-center nav-link" :class="{ active : this.$route.name === 'New Article' }" to="/articles/new">
+                New Article
+            </router-link>
+        </div>
     </nav>
     <div class="container">
         <router-view :key="$route.path"/>
     </div>
 </template>
-
-<script>
-export default {
-    computed: {
-        routeName() {
-            return this.$route.name
-        }
-    }
-}
-</script>
