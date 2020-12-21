@@ -1,6 +1,13 @@
 <template>
-    <nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark justify-content-center">
-        <ul class="navbar-nav">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-center">
+        <ul class="navbar-nav nav">
+            <li class="nav-item">
+                <a class="text-center nav-link" to="/articles">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <br>
+                    {{ routeName }}
+                </a>
+            </li>
             <li class="nav-item">
                 <router-link class="text-center nav-link" to="/articles">
                     <i class="fas fa-home"></i>
@@ -21,3 +28,13 @@
         <router-view :key="$route.path"/>
     </div>
 </template>
+
+<script>
+export default {
+    computed: {
+        routeName() {
+            return this.$route.name
+        }
+    }
+}
+</script>
