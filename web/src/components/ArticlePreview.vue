@@ -1,23 +1,36 @@
 <template>
-    <div class="mb-2 p-1 rounded border border-5 border-primary">
-        <h3>{{ title }}</h3>
-        <small>({{ category }})</small>
-        <p><b>{{ price }}$</b></p>
-        <p>{{ time_created }}</p>
-        <button @click="goToArticlePage">View full article</button>
-    </div>
+    <a id="header" @click="goToArticlePage" class="m-2 rounded-3 shadow-lg"
+        @mouseover="hover = true"
+        @mouseleave="hover = false">
+        <div class="bg-primary text-white rounded-top p-2">
+            <h3 class="d-inline mb-0 align-middle me-5">{{ article.title }}</h3>
+        </div>
+        <div id="body" class="p-2 rounded-bottom" :class="{'bg-primary':hover, 'text-white':hover}">
+            <p>
+                <i class="fas fa-tshirt align-middle"></i>
+                <span class="ms-1">{{ article.category }}</span>
+            </p>
+            <p>
+                <small><strong>{{ article.time_created }}</strong></small>
+            </p>
+            <p>
+                {{ article.price }}$
+                <i class="fas fa-tag fa-xs"></i>
+            </p>
+        </div>
+    </a>
 </template>
 
 <script>
 export default {
     name: 'Article Preview',
+    data() {
+        return {
+            hover: false
+        }
+    },
     props: {
-        title: String,
-        description: String,
-        price: Number,
-        category: String,
-        time_created: String,
-        id: Number
+            article: Object
     },
     methods: {
         goToArticlePage() {
@@ -26,3 +39,16 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+a:hover {
+    background-color: ;
+}
+p {
+    margin-bottom: 0;
+}
+</style>
