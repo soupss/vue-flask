@@ -34,7 +34,7 @@ export default {
     },
     methods: {
         goToArticlePage() {
-            this.$router.push('/articles/'+this.id)
+            this.$router.push('/articles/'+this.article.id)
         }
     }
 }
