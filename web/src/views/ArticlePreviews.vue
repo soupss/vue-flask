@@ -3,7 +3,7 @@
         TODO: style no articles msg
     -->
     <p v-if="articles.length === 0 && articles.length === 0">No articles</p>
-    <div class="d-flex flex-wrap p-2 justify-content-center">
+    <div class="d-flex flex-wrap justify-content-center">
         <ArticlePreview v-for="article in articles" :key="article.id" :article="article"/>
     </div>
 </template>
@@ -18,11 +18,16 @@ export default {
     data() {
         return {
             articles: []
-            }
-        },
-        created() {
-                this.$store.dispatch('fetchArticles')
-                    .then(result => (this.articles = result))
-            }
+        }
+    },
+    methods: {
+        fetchArticles() {
+            this.$store.dispatch('fetchArticles')
+                .then(result => (this.articles = result))
+        }
+    },
+    created() {
+        this.fetchArticles()
     }
+}
 </script>

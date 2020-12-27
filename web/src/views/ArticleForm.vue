@@ -10,7 +10,7 @@
         <label for="title">Enter Title</label>
         <input v-model.lazy="article.title" id="title" placeholder="A green car" required/>
         <label for="description">Enter description</label>
-        <textarea v-model.lazy="article.description" rows="4" cols="50" id="description" placeholder="It is green..." required/>
+        <textarea v-model.lazy="article.description" rows="4" cols="50" id="description" placeholder="It is green..."/>
         <label for="price">Enter price in $</label>
         <input v-model.number="article.price" id="price" type="number" min="0" required/>
         <label for="category">Select category</label>
@@ -45,11 +45,11 @@ export default {
     methods: {
         createArticle() {
             this.$store.dispatch('createArticle', this.article)
-                .then(() => this.$router.push('/articles'))
+                .then(() => this.$router.go(-1))
         },
         updateArticle() {
             this.$store.dispatch('updateArticle', this.article)
-                .then(() => this.$router.push('/articles'))
+                .then(() => this.$router.go(-1))
         }
     },
     created() {
